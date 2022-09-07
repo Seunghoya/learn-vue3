@@ -1,24 +1,7 @@
 # learn-vue3
 
-## Project setup
-```
-npm install
-```
+> - Ref vs Reactive
+> - v-model 
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+> - Style 바인딩 [링크](https://v3.ko.vuejs.org/guide/class-and-style.html#%E1%84%80%E1%85%A2%E1%86%A8%E1%84%8E%E1%85%A6-%E1%84%80%E1%85%AE%E1%84%86%E1%85%AE%E1%86%AB-2)
+> - emit => 자식 컴포넌트에서 부모 컴포넌트로 데이터를 넘기는 방법
