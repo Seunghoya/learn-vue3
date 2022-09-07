@@ -1,7 +1,14 @@
 {
-    "todos": {
-        "subject": "Test Subject",
-        "completed": true,
-        "id": 0
-    }
+    "todos": [
+        {
+            "subject": "Test Subject",
+            "completed": true,
+            "id": 0
+        },
+        {
+            "subject": "Test Subject1",
+            "completed": true,
+            "id": 1
+        }
+    ]
 }
