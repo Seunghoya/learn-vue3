@@ -25,6 +25,7 @@
 import { ref, reactive } from "vue";
 
 export default {
+  name: "BasicFeatures",
   setup() {
     // 변수 선언
     const name = "Shan"

@@ -2,8 +2,7 @@
   <form @submit.prevent="onSubmit">
       <div class="d-flex">
         <div class="flex-grow-1 me-2">
-          <input class="form-control" type="text" v-model="todo">
-          <div>{{ logPrint() }}</div>
+          <input class="form-control" type="text" v-model="todo" placeholder="Type new To-do">
         </div>
         <div>
           <button type="submit" class="btn btn-primary">Save</button>
@@ -15,19 +14,16 @@
 
 <script>
 import { ref } from 'vue'
+
 export default {
   emits: ['add-todo'],
   setup(props, { emit }) {
-    const logPrint = () => {
-      console.log("왜 안열림?")
-    }
     let todo = ref('')
     let hasError = ref(false)
 
     const onSubmit = () => {
       if (todo.value === '') hasError.value = true;
-      else {
-        emit('add-todo', {
+      else {emit('add-todo', {
           id: Date.now(),
           subject: todo.value,
           completed: false
@@ -37,7 +33,6 @@ export default {
       }
     }
     return {
-      logPrint,
       todo,
       hasError,
       onSubmit
