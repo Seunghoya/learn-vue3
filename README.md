@@ -9,5 +9,23 @@
 > - computed => state가 다른 state에 의존하고 있을 때 사용.
 
 
-> - watchEffect => reactiveState를 감지하고 있다가 데이터가 변하면 내부 함수를 실행
-> - watch => watchEffect와 유사하게 사용. 
+> - watchEffect => 콜백 함수 내의 reactiveState를 감지하고 있다가 데이터가 변하면 내부 함수를 실행 (react의 useEffect와 비슷하지만 감지하는 데이터를 지정하지 않고, 모든 reactiveState를 감지한다.)
+> - watch => 특정 reactiveState를 감지해 데이터 변경이 일어날 때 콜백함수를 호출한다.
+```js
+// 단일 소스 감시
+const count = ref(0)
+watch(count, (count, prevCount) => {
+  /* ... */
+})
+
+// 다수의 소스 감시
+const firstName = ref('');
+const lastName= ref('');
+
+watch([firstName, lastName], (newValues, prevValues) => {
+  console.log(newValues, prevValues);
+})
+
+firstName.value = "John"; // ["John",""] ["", ""]
+lastName.value = "Smith"; // ["John", "Smith"] ["John", ""]
+```
